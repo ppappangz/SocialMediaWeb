@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ/ลงทะเบียน Social Hub</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="login-body"> <div class="login-container">
+        <div id="login-group" class="form-group active">
+            <h2>เข้าสู่ระบบ</h2>
+            <form id="login-form" class="login-form">
+                <input type="text" id="login-username" name="username" placeholder="ชื่อผู้ใช้" required>
+                <input type="password" id="login-password" name="password" placeholder="รหัสผ่าน" required>
+                <button type="submit">เข้าสู่ระบบ</button>
+            </form>
+            <p id="login-error-message" class="error-message"></p>
+            <span class="toggle-link" data-target="register-group">ยังไม่มีบัญชี? ** ลงทะเบียน **</span>
+        </div>
+        
+        <div id="register-group" class="form-group">
+            <h2>ลงทะเบียน</h2>
+            <form id="register-form" class="login-form">
+                <input type="text" id="register-username" name="username" placeholder="ชื่อผู้ใช้ใหม่" required>
+                <input type="password" id="register-password" name="password" placeholder="รหัสผ่าน (ขั้นต่ำ 6 ตัวอักษร)" required>
+                <button type="submit">ลงทะเบียน</button>
+            </form>
+            <p id="register-error-message" class="error-message"></p>
+            <span class="toggle-link" data-target="login-group">มีบัญชีอยู่แล้ว? ** เข้าสู่ระบบ **</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

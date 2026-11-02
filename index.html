@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Social Feed</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <i class="fas fa-bolt"></i> FEEDD!
+    </div>
+    <div class="actions">
+        <button id="logout-button" class="logout-btn">ออกจากระบบ</button>
+        <i class="fas fa-plus-square" id="new-post-btn"></i>
+        <i class="fas fa-user-circle" id="profile-btn"></i>
+    </div>
+</header>
+
+<main class="feed-container" id="feed-container">
+    <p class="loading-message">กำลังโหลดฟีด...</p>
+</main>
+
+<!-- โมดอลสร้างโพสต์ใหม่ -->
+<div id="post-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn post-close-btn">&times;</span>
+        <h2>สร้างโพสต์ใหม่</h2>
+        <form id="new-post-form">
+            <textarea id="post-content" name="content" placeholder="คุณกำลังคิดอะไรอยู่?" required rows="5"></textarea>
+            <button type="submit" class="submit-post-btn">โพสต์</button>
+        </form>
+        <p id="post-error-message" class="error-message"></p>
+    </div>
+</div>
+
+<!-- โปรไฟล์ -->
+<div id="profile-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn profile-close-btn">&times;</span>
+        <h2>⚙️ ข้อมูลโปรไฟล์</h2>
+
+        <div class="profile-info">
+            <div class="profile-avatar"></div>
+            <h3 id="profile-username-display"></h3>
+            <p>นี่คือหน้าแสดงข้อมูลโปรไฟล์ของผู้ใช้</p>
+        </div>
+
+        <div class="settings-section">
+            <h4>ข้อมูลบัญชี</h4>
+            <p>ชื่อผู้ใช้ที่ล็อกอินอยู่: <strong id="current-logged-in-user">...</strong></p>
+        </div>
+
+        <button id="modal-logout-button" class="logout-btn" style="width: 100%; margin-top: 20px;">
+            ออกจากระบบ (Logout)
+        </button>
+    </div>
+</div>
+
+<script>
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
